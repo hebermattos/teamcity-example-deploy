@@ -7,10 +7,11 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.ftpUpload
 
 object ProdDeploy_2 : BuildType({
     name = "prod deploy"
+
     steps {
         exec {
             name = "backup"
-            path = """C:\Users\HeberMattos\backup\winscp-download.bat"""
+            path = "%backupscript%"
             arguments = "%backupfolder%"
             param("script.content", """C:\Users\HeberMattos\backup\winscp-download.bat""")
         }
@@ -38,4 +39,5 @@ object ProdDeploy_2 : BuildType({
             transferMode = FTPUpload.TransferMode.AUTO
             sourcePath = "%binfolder%"
         }
-    }})
+    }
+})

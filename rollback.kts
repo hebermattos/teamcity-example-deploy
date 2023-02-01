@@ -10,7 +10,7 @@ object Rollback : BuildType({
     steps {
         ftpUpload {
             name = "deploy backup"
-            targetUrl = "ftp://deploytest.somee.com/www.deploytest.somee.com"
+            targetUrl = "ftp://deploytest.somee.com/%sitefolder%"
             securityMode = FTPUpload.SecurityMode.NONE
             dataChannelProtection = FTPUpload.DataChannelProtectionMode.DISABLE
             authMethod = usernameAndPassword {
@@ -18,7 +18,7 @@ object Rollback : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """%backupfolder%\www.deploytest.somee.com"""
+            sourcePath = """%backupfolder%\%sitefolder%"""
         }
     }
 })

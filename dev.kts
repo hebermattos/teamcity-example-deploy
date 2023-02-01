@@ -38,7 +38,7 @@ object ProdDeploy : BuildType({
         }
         ftpUpload {
             name = "deploy"
-            targetUrl = "ftp://deploytest.somee.com/www.deploytest.somee.com"
+            targetUrl = "ftp://deploytest.somee.com/%sitefolder%"
             securityMode = FTPUpload.SecurityMode.NONE
             dataChannelProtection = FTPUpload.DataChannelProtectionMode.DISABLE
             authMethod = usernameAndPassword {

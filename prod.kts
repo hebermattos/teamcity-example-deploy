@@ -7,7 +7,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.ftpUpload
 
 object ProdDeploy_2 : BuildType({
     name = "prod deploy"
-
     steps {
         exec {
             name = "backup"
@@ -17,7 +16,7 @@ object ProdDeploy_2 : BuildType({
         }
         ftpUpload {
             name = "deploy site 1"
-            targetUrl = "ftp://deploytest.somee.com/www.deploytest.somee.com"
+            targetUrl = "ftp://deploytest.somee.com/%sitefolder%"
             securityMode = FTPUpload.SecurityMode.NONE
             dataChannelProtection = FTPUpload.DataChannelProtectionMode.DISABLE
             authMethod = usernameAndPassword {
@@ -29,7 +28,7 @@ object ProdDeploy_2 : BuildType({
         }
         ftpUpload {
             name = "deploy site 2"
-            targetUrl = "ftp://deploytest.somee.com/www.deploytest.somee.com"
+            targetUrl = "ftp://deploytest.somee.com/%sitefolder%"
             securityMode = FTPUpload.SecurityMode.NONE
             dataChannelProtection = FTPUpload.DataChannelProtectionMode.DISABLE
             authMethod = usernameAndPassword {
@@ -39,5 +38,4 @@ object ProdDeploy_2 : BuildType({
             transferMode = FTPUpload.TransferMode.AUTO
             sourcePath = "%binfolder%"
         }
-    }
-})
+    }})

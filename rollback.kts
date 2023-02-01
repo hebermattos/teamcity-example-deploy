@@ -18,7 +18,7 @@ object Rollback : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """C:\Users\HeberMattos\backup\www.deploytest.somee.com"""
+            sourcePath = """%backupfolder%\www.deploytest.somee.com"""
         }
     }
 })

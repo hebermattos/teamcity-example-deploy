@@ -7,7 +7,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.ftpUpload
 
 object ProdDeploy_2 : BuildType({
     name = "prod deploy"
-
     steps {
         exec {
             name = "backup"
@@ -25,7 +24,7 @@ object ProdDeploy_2 : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """C:\TeamCity\buildAgent\work\d5a220e5b2acfe35\bin\Release\net7.0\publish\"""
+            sourcePath = "%binfolder%"
         }
         ftpUpload {
             name = "deploy site 2"
@@ -37,7 +36,6 @@ object ProdDeploy_2 : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """C:\TeamCity\buildAgent\work\d5a220e5b2acfe35\bin\Release\net7.0\publish\"""
+            sourcePath = "%binfolder%"
         }
-    }
-})
+    }})

@@ -30,9 +30,10 @@ object ProdDeploy : BuildType({
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         dotnetPublish {
-            name = "Publish"
+            name = "generate publish"
             projects = "stars-api.csproj"
             configuration = "Release"
+            outputDir = "%binfolder%"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
         ftpUpload {
@@ -45,7 +46,7 @@ object ProdDeploy : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """%system.teamcity.build.workingDir%\bin\Release\net7.0\publish\"""
+            sourcePath = "%binfolder%"
         }
     }
 

@@ -45,7 +45,7 @@ object ProdDeploy : BuildType({
                 password = "******"
             }
             transferMode = FTPUpload.TransferMode.AUTO
-            sourcePath = """C:\TeamCity\buildAgent\work\d5a220e5b2acfe35\bin\Release\net7.0\publish\"""
+            sourcePath = """%system.teamcity.build.workingDir%\bin\Release\net7.0\publish\"""
         }
     }
 

@@ -1,3 +1,3 @@
 # teamcity-example-deploy
 
-![flow](./teamcity.png)
+![flow](./teamcity2.png)

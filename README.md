@@ -1,5 +1,9 @@
 # teamcity-example-deploy
 
+## project 
+
+![variables](./project.png)
+
 ## project variables
 
 ![variables](./variables.png)
